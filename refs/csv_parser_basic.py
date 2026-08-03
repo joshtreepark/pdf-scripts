@@ -1,3 +1,5 @@
+# preliminary work showing how csv can be used as a TOC reference
+
 import pymupdf
 import csv
 

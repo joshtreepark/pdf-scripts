@@ -1,3 +1,5 @@
+# Code to show how to use pymupdf commands.
+
 import pymupdf
 from pathlib import Path
 
