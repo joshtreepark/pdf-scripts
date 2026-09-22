@@ -182,30 +182,30 @@ The script accepts input arguments either **positionally** or via **flags** (`-i
 ### Usage Syntax
 
 ```bash
-python set_labels.py [INPUT_PDF] [YAML_CONFIG] [-i INPUT] [-c CONFIG] [-o OUTPUT]
+python add_pagelabels.py [INPUT_PDF] [YAML_CONFIG] [-i INPUT] [-c CONFIG] [-o OUTPUT]
 ```
 
 ### Examples
 
 **1. Pure Positional Arguments**
 ```bash
-python set_labels.py book.pdf rules.yaml
+python add_pagelabels.py book.pdf rules.yaml
 ```
 
 **2. Implicit Configuration File**
 *(Automatically resolves to `book.yaml` and saves to `book_labeled.pdf`)*
 ```bash
-python set_labels.py book.pdf
+python add_pagelabels.py book.pdf
 ```
 
 **3. Pure Flag Arguments**
 ```bash
-python set_labels.py -i book.pdf -c rules.yaml
+python add_pagelabels.py -i book.pdf -c rules.yaml
 ```
 
 **4. Specifying a Custom Output File**
 ```bash
-python set_labels.py book.pdf rules.yaml -o final_document.pdf
+python add_pagelabels.py book.pdf rules.yaml -o final_document.pdf
 ```
 
 ---
