@@ -11,6 +11,8 @@ A lightweight command-line tool built with [PyMuPDF](https://pymupdf.readthedocs
 
 ## Prerequisites & Installation
 
+<details>
+
 ### 1. Requirements
 * Python 3.8+
 * [PyMuPDF](https://pymupdf.readthedocs.io/)
@@ -28,6 +30,8 @@ python3 -m venv .venv
 ./.venv/bin/pip install pymupdf
 
 ```
+
+</details>
 
 ## CSV File Formatting
 
@@ -95,6 +99,8 @@ Passing `-o 14` automatically translates every page number in your CSV into the 
 
 ## Command-Line Arguments Reference
 
+<details>
+
 To view all supported flags and usage instructions from the terminal:
 
 ```bash
@@ -109,10 +115,13 @@ To view all supported flags and usage instructions from the terminal:
 | `-o`, `--offset` | Flag | `0` | Integer adjustment for cover/front-matter pages. |
 | `-h`, `--help` | Flag | — | Displays the help message and exits. |
 
+</details>
 
-<center>◆  ◆  ◆  ◆  ◆</center>
+<p align="center">◆  ◆  ◆</p>
+
 
 # add_pagelabels.py
+
 
 A Python utility that updates PDF metadata to display custom page numbers (such as **"Cover"**, lowercase/uppercase **Roman numerals**, or standard **Arabic numbers**) in PDF viewers like Adobe Acrobat, Preview, or Google Chrome.
 
@@ -195,7 +204,9 @@ python add_pagelabels.py -i book.pdf -c rules.yaml
 python add_pagelabels.py book.pdf rules.yaml -o final_document.pdf
 ```
 
+
 ## CLI Options Reference
+<details>
 
 | Argument / Flag | Type | Description |
 | :--- | :--- | :--- |
@@ -204,3 +215,5 @@ python add_pagelabels.py book.pdf rules.yaml -o final_document.pdf
 | **`-i`, `--input`** | Flag | Optional path to the input PDF file (overrides positional input). |
 | **`-c`, `--config`** | Flag | Optional path to the YAML rules file (overrides positional config). |
 | **`-o`, `--output`** | Flag | Optional path for the generated PDF. Defaults to `<input_stem>_labeled.pdf`. |
+
+</details>
