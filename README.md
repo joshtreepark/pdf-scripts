@@ -1,4 +1,4 @@
-# add_toc
+# add_toc.py
 
 A lightweight command-line tool built with [PyMuPDF](https://pymupdf.readthedocs.io/) to quickly parse and insert a Table of Contents (TOC) into any PDF document using a simple CSV file.
 
@@ -120,9 +120,9 @@ To view all supported flags and usage instructions from the terminal:
 | `-o`, `--offset` | Flag | `0` | Integer adjustment for cover/front-matter pages. |
 | `-h`, `--help` | Flag | — | Displays the help message and exits. |
 
----
+<hr style="height:4px; background-color:#333; border:none; margin: 40px 0;">
 
-# PDF Page Labeler CLI
+# add_pagelabels.py
 
 A Python utility that updates PDF metadata to display custom page numbers (such as **"Cover"**, lowercase/uppercase **Roman numerals**, or standard **Arabic numbers**) in PDF viewers like Adobe Acrobat, Preview, or Google Chrome.
 
@@ -136,7 +136,7 @@ PDF readers distinguish between physical page indexes (0, 1, 2...) and display p
 
 ## Prerequisites
 
-Install the required Python packages:
+Install the required Python packages within a virtual environment:
 
 ```bash
 pip install pymupdf pyyaml
@@ -181,8 +181,10 @@ The script accepts input arguments either **positionally** or via **flags** (`-i
 
 ### Usage Syntax
 
+You can run the script using your virtual environment's Python binary directly—no need to manage `activate`/`deactivate` shell states:
+
 ```bash
-python add_pagelabels.py [INPUT_PDF] [YAML_CONFIG] [-i INPUT] [-c CONFIG] [-o OUTPUT]
+./.venv/bin/python add_pagelabels.py [INPUT_PDF] [YAML_CONFIG] [-i INPUT] [-c CONFIG] [-o OUTPUT]
 ```
 
 ### Examples
