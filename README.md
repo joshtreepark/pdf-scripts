@@ -2,16 +2,12 @@
 
 A lightweight command-line tool built with [PyMuPDF](https://pymupdf.readthedocs.io/) to quickly parse and insert a Table of Contents (TOC) into any PDF document using a simple CSV file.
 
----
-
 ## Features
 
 - **Human-Friendly CSV Input:** Easily define document structure without editing complex nested lists in code.
 - **Automatic Page Offset:** Enter natural printed page numbers from the book; the script handles PDF 0-indexing and cover page offsets.
 - **Smart Defaults:** Omit the CSV argument, and `add_toc` automatically checks for a `.csv` file matching your PDF's name.
 - **Safe Output:** Generates a new file (`<filename>_with_toc.pdf`) so your original PDF is never overwritten.
-
----
 
 ## Prerequisites & Installation
 
@@ -33,8 +29,6 @@ python3 -m venv .venv
 
 ```
 
----
-
 ## CSV File Formatting
 
 Create a CSV file containing three columns without headers: `Level`, `Title`, `Page Number`.
@@ -53,8 +47,6 @@ Create a CSV file containing three columns without headers: `Level`, `Title`, `P
 1. **Level (`int`):** Hierarchy depth (`1` for main chapters/parts, `2` for sub-sections, `3` for sub-sub-sections).
 2. **Title (`string`):** The exact text title to display in the PDF bookmark list.
 3. **Page (`int`):** The **printed page number** as shown inside the book itself (1-indexed).
-
----
 
 ## Usage
 
@@ -92,8 +84,6 @@ If physical PDF page 1 aligns directly with printed page 1:
 
 ```
 
----
-
 ## How Page Offsets Work (`-o` / `--offset`)
 
 Books frequently have front matter (covers, copyright, forewords) that push "Printed Page 1" several pages into the physical PDF file.
@@ -102,7 +92,6 @@ Books frequently have front matter (covers, copyright, forewords) that push "Pri
 
 Passing `-o 14` automatically translates every page number in your CSV into the correct zero-indexed location required by PyMuPDF.
 
----
 
 ## Command-Line Arguments Reference
 
@@ -120,19 +109,17 @@ To view all supported flags and usage instructions from the terminal:
 | `-o`, `--offset` | Flag | `0` | Integer adjustment for cover/front-matter pages. |
 | `-h`, `--help` | Flag | — | Displays the help message and exits. |
 
-<hr style="height:4px; background-color:#333; border:none; margin: 40px 0;">
+
+<center>◆  ◆  ◆  ◆  ◆</center>
 
 # add_pagelabels.py
 
 A Python utility that updates PDF metadata to display custom page numbers (such as **"Cover"**, lowercase/uppercase **Roman numerals**, or standard **Arabic numbers**) in PDF viewers like Adobe Acrobat, Preview, or Google Chrome.
 
----
-
 ## Overview
 
 PDF readers distinguish between physical page indexes (0, 1, 2...) and display page labels. This tool uses [PyMuPDF](https://pymupdf.readthedocs.io/) to read human-readable label rules from a YAML configuration file and inject them directly into the PDF metadata without re-rendering or modifying the page contents.
 
----
 
 ## Prerequisites
 
@@ -142,7 +129,6 @@ Install the required Python packages within a virtual environment:
 pip install pymupdf pyyaml
 ```
 
----
 
 ## Configuration (`.yaml`) Format
 
@@ -173,7 +159,6 @@ Define page rules in a YAML file using zero-based page indexes (`startpage`).
 | **`firstpagenum`**| No | Integer | Initial numeric value for the sequence (defaults to `1`). |
 | **`prefix`** | No | String | Text prepended to the page label (e.g., `"Cover"` or `"App-"`). |
 
----
 
 ## Command Line Usage
 
@@ -209,8 +194,6 @@ python add_pagelabels.py -i book.pdf -c rules.yaml
 ```bash
 python add_pagelabels.py book.pdf rules.yaml -o final_document.pdf
 ```
-
----
 
 ## CLI Options Reference
 
